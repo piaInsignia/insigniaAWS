@@ -4,16 +4,17 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import SimpleSlider from "./component/slider";
 import { listFeature, listSolutions } from "./data/listHomeData";
+import Link from "next/link";
 
 export default function Home() {
-  type SocialItem = { img: string };
+  type SocialItem = { img_media: string };
 
   const socialMedia: SocialItem[] = [
-    { img: images.IMG_FACEBOOK },
-    { img: images.IMG_TWITTER },
-    { img: images.IMG_ISTAGRAM },
-    { img: images.IMG_LINKEDIN },
-    { img: images.IMG_YOUTUBE },
+    { img_media: images.IMG_FACEBOOK },
+    { img_media: images.IMG_TWITTER },
+    { img_media: images.IMG_ISTAGRAM },
+    { img_media: images.IMG_LINKEDIN },
+    { img_media: images.IMG_YOUTUBE },
   ];
 
   return (
@@ -253,10 +254,12 @@ export default function Home() {
               AWS.
             </p>
           </div>
-          <button className="inline-flex items-center justify-center w-full sm:w-fit gap-2 bg-white/30 backdrop-blur-md px-4 py-2 rounded-3xl">
-            Learn More
-            <ArrowRight className="w-5 h-5 text-current" />
-          </button>
+          <Link href={"https://aws.amazon.com/partners/"}>
+            <button className="inline-flex items-center justify-center w-full sm:w-fit gap-2 bg-white/30 backdrop-blur-md px-4 py-2 rounded-3xl">
+              Learn More
+              <ArrowRight className="w-5 h-5 text-current" />
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -404,12 +407,15 @@ export default function Home() {
             Connect with our specialists today to arrange a demo session
             designed for your specific goals and challenges.
           </div>
-          <div className="flex justify-center mt-10 sm:mt-0">
-            <button className="inline-flex items-center justify-center w-full sm:w-fit gap-2 bg-white/30 backdrop-blur-md px-4 py-2 rounded-3xl">
-              Start Demo
-              <ArrowRight className="w-5 h-5 text-current" />
-            </button>
-          </div>
+
+          <Link href={"https://insignia.co.id/contact-us/"}>
+            <div className="flex justify-center mt-10 sm:mt-0">
+              <button className="inline-flex items-center justify-center w-full sm:w-fit gap-2 bg-white/30 backdrop-blur-md px-4 py-2 rounded-3xl">
+                Start Demo
+                <ArrowRight className="w-5 h-5 text-current" />
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
 
@@ -502,10 +508,13 @@ export default function Home() {
               {socialMedia.map((item, index) => (
                 <div key={index} className="relative w-4 h-4">
                   <Image
-                    src={item.img}
+                    src={item.img_media}
                     alt="social-media"
                     fill
                     className="object-contain"
+                    onLoadingComplete={() => {
+                      console.log("Image rendering complete!");
+                    }}
                   />
                 </div>
               ))}
