@@ -512,7 +512,7 @@ export default function Home() {
                     alt="social-media"
                     fill
                     className="object-contain"
-                    onLoadingComplete={() => {
+                    onLoad={() => {
                       console.log("Image rendering complete!");
                     }}
                   />
