@@ -17,7 +17,7 @@ export default function Home() {
   ];
 
   return (
-    <section className="relative bg-white overflow-visible">
+    <section className="relative bg-white overflow-visible text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-[0px] sm:mb-[100px]">
         {/* Gambar absolute di kiri atas, menjorok keluar */}
         <div className="col-span-1 md:col-span-3 relative w-full h-40 sm:h-100">
@@ -393,10 +393,10 @@ export default function Home() {
       <div className="w-full h-auto bg-cover bg-center bg-no-repeat sm:bg-[url('/assets/bg_demo_session.jpg')] bg-[url('/assets/bg_demo_session_mobile.jpg')]">
         <div className="px-5 sm:px-40 py-11 sm:py-30 flex flex-col">
           <div className="text-center  sm:py-15 flex flex-col sm:gap-5">
-            <p className="font-schibsted text-[12px] uppercase tracking-[.45em]">
+            <p className="font-schibsted  text-[12px] sm:text-[15px] uppercase tracking-[.40em]">
               Your Personalized Demo Awaits
             </p>
-            <h1 className="text-[32px] font-bold  sm:text-5xl sm:font-normal">
+            <h1 className="text-[32px] font-bold  sm:text-6xl sm:font-normal">
               SET UP DEMO SESSION?
             </h1>
           </div>
